@@ -10,3 +10,6 @@ groups:
     labels:
       severity: critical
       route: "{{ $labels.route }}"
+    annotations:
+      summary: "Slow endpoint: {{ $labels.route }}"
+      description: "p95: {{ $value }}"
