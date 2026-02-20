@@ -181,3 +181,5 @@ for route in "${ROUTES[@]}"; do
     }" > /dev/null
 
 done
+
+echo "✅ Baseline generation complete"
