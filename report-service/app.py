@@ -21,3 +21,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 app = Flask(__name__)
+
+BASELINE_BASE_DIR = "/reports/baselines"
+REGRESSION_BASE_DIR = "/reports/regressions"
