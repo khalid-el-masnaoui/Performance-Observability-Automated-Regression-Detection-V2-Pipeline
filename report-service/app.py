@@ -69,3 +69,9 @@ def save_history(route, metrics):
         HISTORY_DIR,
         f"{safe_route}.json"
     )
+
+    history = []
+
+    if os.path.exists(history_file):
+        with open(history_file, "r") as f:
+            history = json.load(f)
