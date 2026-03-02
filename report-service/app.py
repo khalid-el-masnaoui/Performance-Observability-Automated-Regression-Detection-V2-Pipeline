@@ -33,3 +33,11 @@ CHART_DIR = f"{BASELINE_BASE_DIR}/charts"
 REGRESSION_DIR = f"{REGRESSION_BASE_DIR}/regressions"
 REGRESSION_HISTORY_DIR = f"{REGRESSION_BASE_DIR}/history"
 REGRESSION_CHART_DIR = f"{REGRESSION_BASE_DIR}/charts"
+
+os.makedirs(BASELINE_DIR, exist_ok=True)
+os.makedirs(HISTORY_DIR, exist_ok=True)
+os.makedirs(CHART_DIR, exist_ok=True)
+
+os.makedirs(REGRESSION_DIR, exist_ok=True)
+os.makedirs(REGRESSION_HISTORY_DIR, exist_ok=True)
+os.makedirs(REGRESSION_CHART_DIR, exist_ok=True)
