@@ -200,3 +200,11 @@ def generate_regression_chart(route, history):
 def generate_baseline():
 
     data = request.json
+
+    route = data.get("route")
+    p95 = float(data.get("p95"))
+    p99 = float(data.get("p99", 0))
+    avg = float(data.get("avg", 0))
+    error_rate = float(data.get("error_rate", 0))
+    max_latency = float(data.get("max_latency", 0))
+    throughput = float(data.get("throughput", 0))
