@@ -192,3 +192,11 @@ def generate_regression_chart(route, history):
     plt.close()
 
     return chart_path
+
+# ---------------------------------------------------
+# Generate Baseline PDF
+# ---------------------------------------------------
+@app.route("/generate-baseline", methods=["POST"])
+def generate_baseline():
+
+    data = request.json
