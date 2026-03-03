@@ -233,3 +233,12 @@ def generate_baseline():
     # Generate chart
     # ---------------------------------------------
     chart_path = generate_chart(route, history)
+
+    # ---------------------------------------------
+    # PDF
+    # ---------------------------------------------
+    doc = SimpleDocTemplate(filepath, pagesize=A3)
+
+    styles = getSampleStyleSheet()
+
+    elements = []
