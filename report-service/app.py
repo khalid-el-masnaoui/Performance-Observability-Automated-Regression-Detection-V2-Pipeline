@@ -345,3 +345,12 @@ def generate_baseline():
         "history_entries": len(history)
 
     })
+
+
+# ---------------------------------------------------
+# Generate Regression PDF
+# ---------------------------------------------------
+@app.route("/generate", methods=["POST"])
+def generate():
+
+    data = request.json
