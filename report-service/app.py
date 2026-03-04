@@ -354,3 +354,18 @@ def generate_baseline():
 def generate():
 
     data = request.json
+
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    filename = f"report_{timestamp}.pdf"
+
+    filepath = os.path.join(REGRESSION_DIR, filename)
+
+    doc = SimpleDocTemplate(
+        filepath,
+        pagesize=A3
+    )
+
+    styles = getSampleStyleSheet()
+
+    content = []
