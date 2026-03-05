@@ -494,3 +494,25 @@ def generate():
         )
 
         content.append(Spacer(1, 20))
+
+        # --------------------------------------------
+        # Historical table
+        # --------------------------------------------
+        content.append(
+            Paragraph(
+                "<b>Previous Regression Entries</b>",
+                styles["Heading3"]
+            )
+        )
+
+        hist_table_data = [[
+            "Timestamp",
+            "Baseline",
+            "Current",
+            "Increase %",
+            "P99",
+            "AVG",
+            "Error Rate",
+            "Max Latency",
+            "Throughput"
+        ]]
