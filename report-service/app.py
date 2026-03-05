@@ -432,3 +432,15 @@ def generate():
             route,
             history
         )
+
+        # --------------------------------------------
+        # Route title
+        # --------------------------------------------
+        content.append(
+            Paragraph(
+                f"<b>Route:</b> {route}",
+                styles["Heading2"]
+            )
+        )
+
+        content.append(Spacer(1, 10))
