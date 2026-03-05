@@ -545,3 +545,14 @@ def generate():
         content.append(hist_table)
 
         content.append(Spacer(1, 40))
+
+    # ------------------------------------------------
+    # Build PDF
+    # ------------------------------------------------
+    doc.build(content)
+
+    return jsonify({
+        "status": "generated",
+        "file": filename,
+        "path": filepath
+    })
