@@ -39,3 +39,5 @@ services:
       dockerfile: alertmanager.dockerfile
     ports:
       - "9093:9093"
+    env_file:
+      - .env
