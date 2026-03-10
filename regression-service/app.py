@@ -47,3 +47,8 @@ def query_prometheus_p95(route):
     except Exception as e:
         print("Prometheus query error:", e, flush=True)
         return 0
+
+def query_prometheus_metrics(route):
+    # --------------------------------------------------
+    # Helper
+    # --------------------------------------------------
