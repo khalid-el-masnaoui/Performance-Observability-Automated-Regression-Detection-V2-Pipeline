@@ -52,3 +52,29 @@ def query_prometheus_metrics(route):
     # --------------------------------------------------
     # Helper
     # --------------------------------------------------
+
+    def run_query(query):
+
+        try:
+
+            response = requests.get(f"{PROMETHEUS_URL}/api/v1/query", params={"query": query})
+
+            data = response.json()
+
+            results = data.get("data", {}).get("result", [])
+
+            if not results:
+                return 0
+
+            value = results[0]["value"][1]
+
+            if value in ["NaN", "null", None]:
+                return 0
+
+            return round(float(value), 4)
+
+        except Exception as e:
+
+            print(f"Prometheus query failed: {e}", flush=True)
+
+            return 0
