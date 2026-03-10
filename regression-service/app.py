@@ -16,3 +16,14 @@ SLACK_WEBHOOK = os.getenv("SLACK_WEBHOOK")
 r = redis.Redis(host=REDIS_HOST, port=6379, decode_responses=True)
 
 print ("App started", flush=True)
+
+# -------------------------
+# Prometheus query
+# -------------------------
+
+def query_prometheus_p95(route):
+    query = f'''
+    histogram_quantile(0.95,
+      sum(rate(app_request_duration_seconds_bucket{{route="{route}"}}[2m])) by (le)
+    )
+    '''
