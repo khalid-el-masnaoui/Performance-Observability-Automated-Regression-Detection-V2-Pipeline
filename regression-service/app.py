@@ -185,3 +185,24 @@ def query_prometheus_metrics(route):
     }
 
     return metrics
+
+def query_prometheus_metrics_optimized():
+    # ---------------------------------------------------
+    # Helper
+    # ---------------------------------------------------
+
+    def run_query(query):
+
+        try:
+
+            response = requests.get(f"{PROMETHEUS_URL}/api/v1/query", params={"query": query})
+
+            data = response.json()
+
+            return data.get("data", {}).get("result", [])
+
+        except Exception as e:
+
+            print(f"Prometheus query failed: {e}", flush=True)
+
+            return []
