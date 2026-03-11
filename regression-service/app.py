@@ -152,3 +152,15 @@ def query_prometheus_metrics(route):
       app_request_duration_seconds_sum{{route="{route}"}}[5m]
     )
     '''
+
+    # --------------------------------------------------
+    # THROUGHPUT
+    # --------------------------------------------------
+
+    throughput_query = f'''
+    sum(
+      rate(
+        app_request_duration_seconds_count{{route="{route}"}}[1m]
+      )
+    )
+    '''
