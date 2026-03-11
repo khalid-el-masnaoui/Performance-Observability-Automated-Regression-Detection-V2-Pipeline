@@ -263,3 +263,40 @@ def query_prometheus_metrics_optimized():
         ) by (route)
         '''
     }
+
+    # ---------------------------------------------------
+    # Final metrics object
+    # ---------------------------------------------------
+
+    final_metrics = {}
+
+    # ---------------------------------------------------
+    # Execute queries
+    # ---------------------------------------------------
+
+    for metric_name, query in queries.items():
+
+        results = run_query(query)
+        #print(f"Raw results for {metric_name}:", results, flush=True)
+
+        for item in results:
+
+            route = item["metric"].get("route")
+
+            if not route:
+                continue
+
+            value = item["value"][1]
+
+            try:
+                value = round(float(value), 4)
+            except:
+                value = 0
+
+            if route not in final_metrics:
+
+                final_metrics[route] = {}
+
+            final_metrics[route][metric_name] = value
+
+    
