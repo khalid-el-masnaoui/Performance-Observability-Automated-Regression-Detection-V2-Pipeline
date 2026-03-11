@@ -142,3 +142,13 @@ def query_prometheus_metrics(route):
       )
     )
     '''
+
+    # --------------------------------------------------
+    # MAX LATENCY
+    # --------------------------------------------------
+
+    max_query = f'''
+    max_over_time(
+      app_request_duration_seconds_sum{{route="{route}"}}[5m]
+    )
+    '''
