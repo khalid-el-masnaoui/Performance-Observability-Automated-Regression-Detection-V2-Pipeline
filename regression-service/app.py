@@ -93,3 +93,18 @@ def query_prometheus_metrics(route):
       ) by (le)
     )
     '''
+
+    # --------------------------------------------------
+    # P99
+    # --------------------------------------------------
+
+    p99_query = f'''
+    histogram_quantile(
+      0.99,
+      sum(
+        rate(
+          app_request_duration_seconds_bucket{{route="{route}"}}[2m]
+        )
+      ) by (le)
+    )
+    '''
