@@ -122,3 +122,23 @@ def query_prometheus_metrics(route):
       app_request_duration_seconds_count{{route="{route}"}}[2m]
     )
     '''
+
+    # --------------------------------------------------
+    # ERROR RATE
+    # --------------------------------------------------
+
+    error_query = f'''
+    (
+      sum(
+        rate(
+          app_requests_total{{route="{route}",status=~"5.."}}[2m]
+        )
+      )
+      /
+      sum(
+        rate(
+          app_requests_total{{route="{route}"}}[2m]
+        )
+      )
+    )
+    '''
