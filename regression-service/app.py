@@ -108,3 +108,17 @@ def query_prometheus_metrics(route):
       ) by (le)
     )
     '''
+
+    # --------------------------------------------------
+    # AVG
+    # --------------------------------------------------
+
+    avg_query = f'''
+    rate(
+      app_request_duration_seconds_sum{{route="{route}"}}[2m]
+    )
+    /
+    rate(
+      app_request_duration_seconds_count{{route="{route}"}}[2m]
+    )
+    '''
