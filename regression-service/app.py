@@ -164,3 +164,24 @@ def query_prometheus_metrics(route):
       )
     )
     '''
+
+    # --------------------------------------------------
+    # Execute all queries
+    # --------------------------------------------------
+
+    metrics = {
+
+        "p95": run_query(p95_query),
+
+        "p99": run_query(p99_query),
+
+        "avg": run_query(avg_query),
+
+        "error_rate": run_query(error_query),
+
+        "max_latency": run_query(max_query),
+
+        "throughput": run_query(throughput_query)
+    }
+
+    return metrics
