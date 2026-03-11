@@ -248,3 +248,18 @@ def query_prometheus_metrics_optimized():
           ) by (route)
         )
         ''',
+
+        "max_latency": '''
+        max (
+            max_over_time(
+                app_request_duration_seconds_sum[5m]
+            )
+        ) by (route)
+        ''',
+
+        "throughput": '''
+        sum(
+          rate(app_request_duration_seconds_count[1m])
+        ) by (route)
+        '''
+    }
