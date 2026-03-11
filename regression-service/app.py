@@ -206,3 +206,18 @@ def query_prometheus_metrics_optimized():
             print(f"Prometheus query failed: {e}", flush=True)
 
             return []
+
+    # ---------------------------------------------------
+    # Queries
+    # ---------------------------------------------------
+
+    queries = {
+
+        "p95": '''
+        histogram_quantile(
+          0.95,
+          sum(
+            rate(app_request_duration_seconds_bucket[2m])
+          ) by (le, route)
+        )
+        ''',
