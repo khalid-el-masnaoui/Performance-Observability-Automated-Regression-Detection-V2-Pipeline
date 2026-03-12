@@ -330,3 +330,13 @@ def query_prometheus_metrics_optimized():
 def trigger_spx(route):
     # Enable profiling for next requests
     r.setex(f"spx:{route}", 60, 1)
+
+
+# -------------------------
+# Slack notification
+# -------------------------
+def send_slack(payload):
+    try:
+        requests.post(SLACK_WEBHOOK, json=payload)
+    except Exception as e:
+        print("Slack error:", e, flush=True)
