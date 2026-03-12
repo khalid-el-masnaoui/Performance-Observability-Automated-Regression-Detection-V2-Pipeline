@@ -340,3 +340,53 @@ def send_slack(payload):
         requests.post(SLACK_WEBHOOK, json=payload)
     except Exception as e:
         print("Slack error:", e, flush=True)
+
+def build_slack_payload(route, current, baseline, increase, regression):
+
+    def fmt(value):
+        try:
+            return f"{float(value):.2f}"
+        except:
+            return "0.00"
+
+    payload = {
+        "attachments": [
+            {
+                "color": "#ff0000" if regression else "#36a64f",
+
+                "title": f"🚨 Performance Alert: {route}",
+
+                "fields": [
+
+                    {
+                        "title": "Current p95",
+                        "value": f"{fmt(current)}s",
+                        "short": True
+                    },
+
+                    {
+                        "title": "Baseline p95",
+                        "value": f"{fmt(baseline)}s",
+                        "short": True
+                    },
+
+                    {
+                        "title": "Increase",
+                        "value": f"{fmt(increase * 100)}%",
+                        "short": True
+                    },
+
+                    {
+                        "title": "Regression",
+                        "value": str(regression),
+                        "short": True
+                    }
+
+                ],
+
+                "footer": "Regression Service"
+            }
+        ]
+    }
+
+    return payload
