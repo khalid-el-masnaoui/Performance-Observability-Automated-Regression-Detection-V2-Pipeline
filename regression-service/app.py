@@ -299,4 +299,29 @@ def query_prometheus_metrics_optimized():
 
             final_metrics[route][metric_name] = value
 
-    
+    # ---------------------------------------------------
+    # Fill missing metrics
+    # ---------------------------------------------------
+
+    required_metrics = [
+        "p95",
+        "p99",
+        "avg",
+        "error_rate",
+        "max_latency",
+        "throughput"
+    ]
+
+    #print("Raw metrics from Prometheus:", final_metrics, flush=True)
+
+    for route in final_metrics:
+
+        for metric in required_metrics:
+
+            if metric not in final_metrics[route]:
+
+                final_metrics[route][metric] = 0
+
+    return final_metrics
+
+# -------------------------
