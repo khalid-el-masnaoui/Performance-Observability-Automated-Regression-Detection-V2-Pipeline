@@ -417,3 +417,12 @@ def generate_baseline_report(route, payload):
     except Exception as e:
 
         print("Baseline report error:", e, flush=True)
+
+# -------------------------
+# Regression PDF report
+# -------------------------
+def generate_report(data):
+    try:
+        requests.post(f"{REPORT_URL}/generate", json=data)
+    except Exception as e:
+        print("Report error:", e, flush=True)
