@@ -325,3 +325,8 @@ def query_prometheus_metrics_optimized():
     return final_metrics
 
 # -------------------------
+# SPX trigger
+# -------------------------
+def trigger_spx(route):
+    # Enable profiling for next requests
+    r.setex(f"spx:{route}", 60, 1)
