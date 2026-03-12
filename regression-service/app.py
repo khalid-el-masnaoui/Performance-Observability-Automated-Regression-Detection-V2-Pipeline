@@ -426,3 +426,13 @@ def generate_report(data):
         requests.post(f"{REPORT_URL}/generate", json=data)
     except Exception as e:
         print("Report error:", e, flush=True)
+
+
+# -------------------------
+# Store baseline per route
+# -------------------------
+@app.route("/baseline", methods=["POST"])
+def baseline():
+    data = request.json
+
+    route = data["route"]
