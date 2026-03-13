@@ -529,3 +529,7 @@ def alert():
 
             send_slack(build_slack_payload(route, current["p95"], baseline["p95"], increase, is_regression))
             
+            # generate report
+            generate_report({route: result})
+
+    return jsonify({"results": results})
