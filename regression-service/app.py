@@ -483,3 +483,15 @@ def alert():
 
         if baseline["p95"] == 0:
             continue
+
+        # current latency
+        #current = query_prometheus_p95(route)
+
+        # metrics
+        #current = query_prometheus_metrics(route)
+        current = query_prometheus_metrics_optimized().get(route, {})
+
+        #print(f"Current metrics for {route}: {current}", flush=True)
+
+        if not current:
+            continue
