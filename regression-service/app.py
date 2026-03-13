@@ -495,3 +495,11 @@ def alert():
 
         if not current:
             continue
+
+       
+
+        increase = (current["p95"] - baseline["p95"]) / baseline["p95"]
+
+        is_regression = increase > 0.33
+
+        #print(f"Route: {route}, Regression: {is_regression}", flush=True)
