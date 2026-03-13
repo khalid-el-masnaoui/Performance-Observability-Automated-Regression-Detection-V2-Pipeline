@@ -503,3 +503,12 @@ def alert():
         is_regression = increase > 0.33
 
         #print(f"Route: {route}, Regression: {is_regression}", flush=True)
+
+        if is_regression:
+            result = {
+                "route": route,
+                "baseline": baseline["p95"],
+                "current": current,
+                "increase": increase,
+                "regression": is_regression
+            }
