@@ -446,3 +446,5 @@ def baseline():
         "throughput": data.get("throughput", 0),
         "updated_at": int(time.time())
     }
+
+    r.set(f"baseline:{route}", json.dumps(payload))
