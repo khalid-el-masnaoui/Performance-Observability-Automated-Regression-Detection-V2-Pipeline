@@ -452,3 +452,14 @@ def baseline():
     generate_baseline_report(route, payload)
 
     return jsonify({"status": "stored", "route": route})
+
+
+# -------------------------
+# Alert handler (MAIN ENTRYPOINT)
+# -------------------------
+@app.route("/alert", methods=["POST"])
+def alert():
+    payload = request.json
+
+    #print ("alert received", flush=True)
+    #print (payload, flush=True)
