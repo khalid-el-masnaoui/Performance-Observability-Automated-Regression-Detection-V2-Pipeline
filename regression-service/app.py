@@ -436,3 +436,13 @@ def baseline():
     data = request.json
 
     route = data["route"]
+
+    payload = {
+        "p95": data.get("p95", 0),
+        "p99": data.get("p99", 0),
+        "avg": data.get("avg", 0),
+        "error_rate": data.get("error_rate", 0),
+        "max_latency": data.get("max_latency", 0),
+        "throughput": data.get("throughput", 0),
+        "updated_at": int(time.time())
+    }
