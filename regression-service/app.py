@@ -512,3 +512,8 @@ def alert():
                 "increase": increase,
                 "regression": is_regression
             }
+
+            results.append(result)
+
+            # ALWAYS trigger SPX
+            trigger_spx(route)
