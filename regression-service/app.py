@@ -517,3 +517,15 @@ def alert():
 
             # ALWAYS trigger SPX
             trigger_spx(route)
+
+            # ALWAYS notify Slack (even duplicates)
+            # send_slack({
+            #     "text": f"🚨 Performance Alert: {route}\n" 
+            #             f"🚨 Route: {route}\n"
+            #             f"p95: {current['p95']:.2f}s (baseline {baseline['p95']})\n"
+            #             f"increase: {increase*100:.1f}%\n"
+            #             f"regression: {is_regression}"
+            # })
+
+            send_slack(build_slack_payload(route, current["p95"], baseline["p95"], increase, is_regression))
+            
