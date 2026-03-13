@@ -463,3 +463,12 @@ def alert():
 
     #print ("alert received", flush=True)
     #print (payload, flush=True)
+
+    results = []
+
+    for alert in payload.get("alerts", []):
+        labels = alert.get("labels", {})
+        route = labels.get("route")
+
+        if not route:
+            continue
