@@ -448,3 +448,7 @@ def baseline():
     }
 
     r.set(f"baseline:{route}", json.dumps(payload))
+
+    generate_baseline_report(route, payload)
+
+    return jsonify({"status": "stored", "route": route})
