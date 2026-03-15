@@ -546,9 +546,37 @@ def check():
 
     for route in routes:
         baseline = json.loads(r.get(f"baseline:{route}"))
+
+        if baseline["p95"] == 0:
+            continue
+    
         #current = query_prometheus_p95(route)
         #current = query_prometheus_metrics(route)
         current = query_prometheus_metrics_optimized().get(route, {})
 
-        if baseline["p95"] == 0:
-            continue
+        increase = (current["p95"] - baseline["p95"]) / baseline["p95"]
+
+        results.append({
+            "route": route,
+            "baseline": baseline["p95"],
+            "current": current,
+            "increase": increase,
+            "regression": increase > 0.3
+        })
+
+    return jsonify(results)
+
+
+# -------------------------
+# health check
+# -------------------------
+@app.route("/health")
+def health():
+    return {"status": "ok"}
+
+
+# -------------------------
+# run
+# -------------------------
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8090)
