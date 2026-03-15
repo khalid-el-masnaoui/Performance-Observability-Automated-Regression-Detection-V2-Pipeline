@@ -533,3 +533,11 @@ def alert():
             generate_report({route: result})
 
     return jsonify({"results": results})
+
+
+# -------------------------
+# Manual check endpoint
+# -------------------------
+@app.route("/check", methods=["POST"])
+def check():
+    routes = [key.replace("baseline:", "") for key in r.keys("baseline:*")]
