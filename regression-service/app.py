@@ -541,3 +541,8 @@ def alert():
 @app.route("/check", methods=["POST"])
 def check():
     routes = [key.replace("baseline:", "") for key in r.keys("baseline:*")]
+
+    results = []
+
+    for route in routes:
+        baseline = json.loads(r.get(f"baseline:{route}"))
