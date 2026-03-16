@@ -10,3 +10,5 @@ This project integrates:
 - 🔥 SPX PHP profiler with flamegraphs
 - 🚨 Alertmanager for alert routing
 - 🤖 Custom Automated regression detection service (:snake: Python) 
+- 🧪 k6 load testing for automated performance validation
+- 📄 PDF report generation for baselines & regressions (:snake: Python)
