@@ -92,3 +92,6 @@ Grafana Dashboards + Slack Alerts
 
 - Docker
 - Docker Compose
+
+Optional:
+- `K6` & `jq` (only if need to test locally with `/testing`)
