@@ -69,3 +69,20 @@ Grafana Dashboards + Slack Alerts
 - Regression service triggers SPX profiling via Redis and generates reports
 - Report service writes baseline and regression PDF reports to disk
 - `k6` generates synthetic traffic to validate baseline and regression behavior
+
+## Project Structure
+
+```bash
+├── docker-compose.yml          # Main orchestration
+├── alertmanager/               # Alert routing
+├── k6/                         # Load testing scripts
+├── nginx/                      # Web server config
+├── php/                        # PHP-FPM setup
+├── prometheus/                 # Metrics config
+├── regression-service/         # Python regression detector
+├── report-service/             # Python PDF generator
+├── src/                        # PHP application
+├── reports/                    # Generated PDFs
+├── spx-data/                   # Flamegraph storage
+└── testing/                    # Test utilities
+```
