@@ -117,3 +117,12 @@ Verify services:
 ```bash
 docker compose ps
 ```
+
+## Endpoints & Routes
+
+### Service Endpoints
+| Service | URL | Notes |
+|---|---|---|
+| PHP App | http://localhost:8080 | Main web app routes and `/flamegraphs` |
+| Prometheus | http://localhost:9090 | Scrapes app and exporter metrics |
+| Alertmanager | http://localhost:9093 | Receives alerts from Prometheus |
