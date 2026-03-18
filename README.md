@@ -111,3 +111,9 @@ Start the stack:
 ```bash
 docker compose up -d --build
 ```
+
+Verify services:
+
+```bash
+docker compose ps
+```
