@@ -95,3 +95,11 @@ Grafana Dashboards + Slack Alerts
 
 Optional:
 - `K6` & `jq` (only if need to test locally with `/testing`)
+
+## Quick Start
+
+```bash
+git clone https://github.com/khalid-el-masnaoui/Performance-Observability-Automated-Regression-Detection-V2-Pipeline.git
+cd regression-detection-nodejs
+cp .env.example .env
+```
