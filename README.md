@@ -179,3 +179,7 @@ SLACK_WEBHOOK=https://hooks.slack.com/services/XXXXX/XXXXX/XXXXX
 ### Baseline storage
 
 The regression service stores baseline metrics in Redis using keys like `baseline:/api/users`.
+
+### Alert handling
+
+`Alertmanager` sends alerts (based on `P95`) to the regression service at `/alert`
