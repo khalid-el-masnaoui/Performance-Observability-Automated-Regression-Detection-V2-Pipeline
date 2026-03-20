@@ -183,3 +183,9 @@ The regression service stores baseline metrics in Redis using keys like `baselin
 ### Alert handling
 
 `Alertmanager` sends alerts (based on `P95`) to the regression service at `/alert`
+
+The regression service then:
+
+- loads the baseline for the route,
+- queries current metrics from Prometheus,
+- calculates p95 increase,
