@@ -126,3 +126,7 @@ docker compose ps
 | PHP App | http://localhost:8080 | Main web app routes and `/flamegraphs` |
 | Prometheus | http://localhost:9090 | Scrapes app and exporter metrics |
 | Alertmanager | http://localhost:9093 | Receives alerts from Prometheus |
+| Grafana | http://localhost:3000 | Dashboarding (not provisioned by default) |
+| Regression Service | http://localhost:8090 | Baseline, alert, manual checks |
+| Report Service | http://localhost:5100 | PDF generation endpoints |
+| SPX Web UI | http://localhost:8080/?SPX_KEY=dev&SPX_UI=1&SPX_UI_URI=/ | PHP-SPX Profiling Web UI
