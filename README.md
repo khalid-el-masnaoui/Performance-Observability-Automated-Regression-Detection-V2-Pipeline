@@ -202,3 +202,9 @@ You can also run a manual baseline check with:
 curl -X POST http://localhost:8090/check
 
 ```
+
+## Full Workflow
+
+k6 simulates:
+
+- baseline traffic to generate the baseline
