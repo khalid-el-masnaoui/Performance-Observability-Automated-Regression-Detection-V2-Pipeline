@@ -208,3 +208,4 @@ curl -X POST http://localhost:8090/check
 k6 simulates:
 
 - baseline traffic to generate the baseline
+- slow endpoint traffic (?delay=) to trigger a regression
