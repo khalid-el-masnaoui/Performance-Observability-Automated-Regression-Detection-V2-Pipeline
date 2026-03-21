@@ -223,3 +223,10 @@ k6 simulates:
          regression detected → Redis(spx-enabled)
          ↓
          slack alert
+         ↓
+         regression report generated
+         ↓         ↓
+next request → SPX profiling ON
+         ↓
+flamegraph generated
+```
