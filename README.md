@@ -209,3 +209,5 @@ k6 simulates:
 
 - baseline traffic to generate the baseline
 - slow endpoint traffic (?delay=) to trigger a regression
+
+**Note**: k6 traffic is automatically triggered the first time the application is up (using `k6/entrypoint.sh`). You can also generate traffic locally using `testing/makefile`
