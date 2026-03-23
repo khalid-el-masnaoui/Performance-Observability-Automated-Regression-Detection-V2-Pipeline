@@ -244,3 +244,10 @@ flamegraph generated
 | throughput  | system capacity     |
 
 **Note**: the regression is only checked against `P95`, you can extend it to include other metrics.
+
+## Configuration Files
+
+- `docker-compose.yml` — full stack definition
+- `nginx/default.conf` — app routing, metrics, SPX, flamegraph endpoint
+- `php/php.dockerfile` — PHP image with SPX and Redis extensions
+- `prometheus/prometheus.yml` — Prometheus scrape config
