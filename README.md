@@ -238,3 +238,7 @@ flamegraph generated
 | p95         | tail latency        |
 | p99         | extreme latency     |
 | avg         | overall performance |
+| rps         | traffic load        |
+| error_rate  | reliability         |
+| max_latency | spikes              |
+| throughput  | system capacity     |
