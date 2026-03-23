@@ -251,3 +251,7 @@ flamegraph generated
 - `nginx/default.conf` — app routing, metrics, SPX, flamegraph endpoint
 - `php/php.dockerfile` — PHP image with SPX and Redis extensions
 - `prometheus/prometheus.yml` — Prometheus scrape config
+- `prometheus/alerts.yml` — alert rule for slow endpoints
+- `alertmanager/alertmanager.yml` — routes alerts to regression service
+- `k6/baseline.js` — baseline traffic generator
+- `k6/ingest_slow_requests.js` — regression/slow traffic scenario
