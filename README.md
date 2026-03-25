@@ -325,3 +325,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [Grafana Documentation](https://grafana.com/docs/)
 - [k6 Documentation](https://k6.io/docs/)
 - [SPX Profiler](https://github.com/NoiseByNorthwest/php-spx)
+
+## License
+
+This repository has no license defined; add one if you want to share or publish it.
