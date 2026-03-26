@@ -1,0 +1,114 @@
+[
+  {
+    "timestamp": "2026-05-15T20:31:57.923491",
+    "route": "/api/users",
+    "baseline_p95": 0.4769470654292463,
+    "current_p95": 1.616,
+    "increase_percent": 238.8216674623253,
+    "regression": true,
+    "current_metrics": {
+      "p95": 1.616,
+      "p99": 1.9232,
+      "avg": 0.4762,
+      "max_latency": 187.2733,
+      "throughput": 2.2182,
+      "error_rate": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-15T20:37:57.901063",
+    "route": "/api/users",
+    "baseline_p95": 0.4769470654292463,
+    "current_p95": 1.806,
+    "increase_percent": 278.6583734139601,
+    "regression": true,
+    "current_metrics": {
+      "p95": 1.806,
+      "p99": 1.9612,
+      "avg": 0.6613,
+      "max_latency": 369.4677,
+      "throughput": 2.2182,
+      "error_rate": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-15T20:43:57.938444",
+    "route": "/api/users",
+    "baseline_p95": 0.477156862745098,
+    "current_p95": 1.7125,
+    "increase_percent": 258.89665091432096,
+    "regression": true,
+    "current_metrics": {
+      "p95": 1.7125,
+      "p99": 1.9579,
+      "avg": 0.5261,
+      "max_latency": 419.6576,
+      "throughput": 2.2364,
+      "error_rate": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-15T20:47:57.882770",
+    "route": "/api/users",
+    "baseline_p95": 0.477156862745098,
+    "current_p95": 1.8011,
+    "increase_percent": 277.4649681528663,
+    "regression": true,
+    "current_metrics": {
+      "p95": 1.8011,
+      "p99": 1.9602,
+      "avg": 0.6446,
+      "max_latency": 357.8139,
+      "throughput": 1.3455,
+      "error_rate": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-15T20:51:57.937781",
+    "route": "/api/users",
+    "baseline_p95": 0.477156862745098,
+    "current_p95": 1.7944,
+    "increase_percent": 276.06081775220883,
+    "regression": true,
+    "current_metrics": {
+      "p95": 1.7944,
+      "p99": 1.9589,
+      "avg": 0.6377,
+      "max_latency": 533.5238,
+      "throughput": 2.2727,
+      "error_rate": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-15T20:54:57.857400",
+    "route": "/api/users",
+    "baseline_p95": 0.477156862745098,
+    "current_p95": 1.8143,
+    "increase_percent": 280.23135401684823,
+    "regression": true,
+    "current_metrics": {
+      "p95": 1.8143,
+      "p99": 1.9629,
+      "avg": 0.6863,
+      "max_latency": 626.1512,
+      "throughput": 1.3636,
+      "error_rate": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-15T20:57:57.926027",
+    "route": "/api/users",
+    "baseline_p95": 0.477156862745098,
+    "current_p95": 1.8078,
+    "increase_percent": 278.8691185535238,
+    "regression": true,
+    "current_metrics": {
+      "p95": 1.8078,
+      "p99": 1.9616,
+      "avg": 0.6675,
+      "max_latency": 741.6337,
+      "throughput": 1.7455,
+      "error_rate": 0
+    }
+  }
+]
