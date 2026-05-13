@@ -137,6 +137,15 @@ git clone https://github.com/khalid-el-masnaoui/Performance-Observability-Automa
 cd performance-observability-automated-regression-detection-v2-pipeline
 ```
 
+**2. Prepare environment**
+
+Copy the example env file:
+
+```bash
+cp .env.example .env
+```
+
+Update values as needed, especially **`SLACK_WEBHOOK`**.
 
 
 ## Endpoints & Routes
