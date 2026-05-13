@@ -130,25 +130,14 @@ Optional:
 
 ## Quick Start
 
+**1. Clone repository**
+
 ```bash
 git clone https://github.com/khalid-el-masnaoui/Performance-Observability-Automated-Regression-Detection-V2-Pipeline.git
-cd regression-detection-nodejs
-cp .env.example .env
+cd performance-observability-automated-regression-detection-v2-pipeline
 ```
 
-Edit `.env` if you need custom host/URL values or add a Slack webhook.
 
-Start the stack:
-
-```bash
-docker compose up -d --build
-```
-
-Verify services:
-
-```bash
-docker compose ps
-```
 
 ## Endpoints & Routes
 
