@@ -250,7 +250,7 @@ Important variables:
 - `SLACK_WEBHOOK` — Slack webhook for alert notifications
 
 
-## How Regression Detection Works
+## How It Works
 
 ### Baseline storage
 
@@ -258,26 +258,25 @@ The regression service stores baseline metrics in Redis using keys like `baselin
 
 ### Alert handling
 
+Alert rule: `SlowEndpoint` triggers when p95 latency > 1s for any route.
+
 `Alertmanager` sends alerts (based on `P95`) to the regression service at `/alert`
 
-The regression service then:
+### Regression service
 
-- loads the baseline for the route,
-- queries current metrics from Prometheus,
-- calculates p95 increase,
-- flags a regression when the increase is `> 30%`,
-- triggers SPX profiling for the route,
-- sends Slack notifications if configured,
-- creates a PDF regression report.
+Endpoints:
 
-### Manual check
+- `POST /baseline` — store route baseline metrics in Redis and generate baseline PDF
+- `POST /alert` — handle incoming Prometheus alerts, compute current metrics, and detect if regression against baseline (`> 30%`)
+- `POST /check` — manually evaluate all stored baselines against current Prometheus metrics
+- `GET /health` — health check
 
-You can also run a manual baseline check with:
+If a regression is detected, the service:
 
-```bash
-curl -X POST http://localhost:8090/check
+- triggers SPX profiling for the affected route
+- sends Slack notification if `SLACK_WEBHOOK` is configured
+- generates a PDF regression report via `report-service`
 
-```
 
 ## Full Workflow
 
