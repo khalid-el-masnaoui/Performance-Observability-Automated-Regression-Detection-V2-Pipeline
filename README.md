@@ -332,6 +332,12 @@ flamegraph generated
     <img src="images/regression_chart.png" width="40%" /> 
 </p>
 
+## Notes
+
+- Route normalization is implemented in `src/index.php` to replace numeric IDs and UUIDs with normalized route labels.
+- Metrics are recorded using Prometheus histograms with route, method, and status labels.
+- The sample PHP app is intentionally simple and can be replaced by any PHP codebase.
+
 
 ## Troubleshooting
 
@@ -374,11 +380,6 @@ View service logs:
 docker compose logs -f [service-name]
 ```
 
-## Notes
-
-- Route normalization is implemented in `src/index.php` to replace numeric IDs and UUIDs with normalized route labels.
-- Metrics are recorded using Prometheus histograms with route, method, and status labels.
-- The sample PHP app is intentionally simple and can be replaced by any PHP codebase.
 
 ## Contributing
 
