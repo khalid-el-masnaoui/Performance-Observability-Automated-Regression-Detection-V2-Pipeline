@@ -277,6 +277,14 @@ If a regression is detected, the service:
 - sends Slack notification if `SLACK_WEBHOOK` is configured
 - generates a PDF regression report via `report-service`
 
+### SPX profiling & Flamegraphs
+
+- SPX is enabled by the Nginx `fastcgi_param PHP_VALUE "auto_prepend_file=/var/www/html/spx_prepend.php"` setting.
+
+- The file `src/spx_prepend.php` connects to Redis and enables profiling only when `spx:{route}` is set.
+
+- The flamegraph browser is served by `src/flamegraphs.php` and static JSON files under `/spx-data`.
+
 
 ## Full Workflow
 
