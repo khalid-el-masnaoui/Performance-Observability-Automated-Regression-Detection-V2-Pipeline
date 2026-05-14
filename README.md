@@ -327,6 +327,19 @@ flamegraph generated
 - `reports/regressions/` — regression PDF reports (you find report examples in `example-reports`)
 - `spx-data/` — SPX profile JSON output
 
+The regression report contains: 
+
+| Feature              | Included |
+| -------------------- | -------- |
+| p95/p99/avg          | ✅        |
+| throughput           | ✅        |
+| max latency          | ✅        |
+| error rate           | ✅        |
+| historical trends    | ✅        |
+| charts               | ✅        |
+| historical tables    | ✅        |
+| regression evolution | ✅        |
+
 <p float="left" align="middle">
     <img src="images/slack_alert.png" width="40%" /> 
     <img src="images/regression_chart.png" width="40%" /> 
