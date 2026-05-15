@@ -347,7 +347,7 @@ Use the manual endpoint to evaluate all stored baselines at once:
 curl -X POST http://localhost:8090/check
 ```
 
-This will run the same AI-based evaluation for all routes in Redis.
+This will run the same regression evaluation for all routes in Redis.
 
 ## The Tracked Metrics
 
