@@ -67,34 +67,9 @@ This project is designed to detect performance regressions automatically by:
 
 The stack is designed to demonstrate a simple full pipeline:
 
-
-```bash
-[k6 Load Test]
-      ↓
-   Nginx
-      ↓
- PHP-FPM Application
-      ↓
-Prometheus Metrics Exporter
-      ↓
-Prometheus Server
-      ↓
-Alertmanager
-      ↓
-Regression Detector (Python)
-      ↓
-Generate PDF Report & Historical Tracking (Python)
-      ↓
-SPX Trigger Service
-      ↓
-SPX PHP Profiler
-      ↓
-Flamegraph Storage
-      ↓
-Flamegraph UI
-      ↓
-Grafana Dashboards + Slack Alerts
-```
+<p float="left" align="middle">
+    <img src="images/performance-observability-v2-pipeline.png" width="80%" /> 
+</p>
 
 - `nginx` reverse-proxies traffic to the PHP application
 - PHP app exposes `/metrics`, `/flamegraphs`, and application routes
